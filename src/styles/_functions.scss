@@ -1,0 +1,24 @@
+@use 'sass:math';
+
+// ==========================================================================
+// Strip Units
+// ==========================================================================
+
+/// Remove the unit from a number
+/// @param {Number} $value - Value with unit
+/// @return {Number} - Unitless value
+@function strip-unit($value) {
+  @return math.div($value, ($value * 0 + 1));
+}
+
+// ==========================================================================
+// Pixel to Rem Conversion
+// ==========================================================================
+
+/// Convert pixel values to rem
+/// @param {Number} $value - Pixel value (with or without unit)
+/// @param {Number} $base-size - Base font size (default: 16)
+/// @return {Number} - Rem value
+@function rem($value, $base-size: 16) {
+  @return math.div(strip-unit($value), $base-size) * 1rem;
+}

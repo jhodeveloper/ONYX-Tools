@@ -1,0 +1,47 @@
+@use '../../styles/functions';
+@use '../../styles/mixins';
+
+.sales-audit-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: functions.rem(20);
+  padding: functions.rem(20);
+  background-color: var(--colour-dark);
+  color: var(--colour-light);
+
+  .input-area {
+    display: flex;
+    gap: 10px;
+  
+    .input-field {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 50%;
+      aspect-ratio: 2 / 1;
+      padding: functions.rem(20);
+
+      .uploader-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex-grow: 1;
+        
+        @include mixins.tile;
+
+        .drop-zone {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          width: 100%;
+          height: 100%;
+          padding: functions.rem(20);
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
