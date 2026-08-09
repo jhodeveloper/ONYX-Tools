@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage" : "https://jhodeveloper.github.io/ONYX-Tools",
+  "homepage" : "https://tools.onyxnails.co",
   "scripts": {
     "dev": "vite",
     "build": "vite build",

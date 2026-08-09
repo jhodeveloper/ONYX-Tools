@@ -32,6 +32,6 @@ jobs:
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
         
       - name: Deploy to GitHub Pages
-        run: npx gh-pages -d dist --repo https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
+        run: npx gh-pages -d dist --cname tools.onyxnails.co --repo https://x-access-token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

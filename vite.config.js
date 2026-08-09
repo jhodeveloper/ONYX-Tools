@@ -19,5 +19,4 @@ export default defineConfig({
       }
     }
   },
-  base: '/ONYX-Tools/', // 👈 important for GitHub Pages
 })
