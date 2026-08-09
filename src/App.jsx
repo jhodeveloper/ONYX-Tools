@@ -5,7 +5,7 @@ import SalesAudit from './apps/sales-audit/SalesAudit';
 const App = () => {
   return (
     <>
-    <BrowserRouter basename="/ONYX-Tools/">
+    <BrowserRouter>
       <Routes>
         <Route path='/' element={ <Menu /> }/>
         <Route path='/bfpl-sales-audit' element={ <SalesAudit /> }/>
