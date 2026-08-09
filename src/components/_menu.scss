@@ -15,10 +15,17 @@
       .menu-item {
         padding: rem(12);
         .menu-link {
+          display: flex;
+          flex-direction: column;
           text-decoration: none;
-
+          height: 100%;
+          
           .menu-item-content {
             @include tile;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
 
             .menu-icon-container {
               display: flex;
@@ -47,18 +54,19 @@
               }
             }
 
-    
-            .menu-item-title {
-              color: var(--colour-primary);
-              margin-bottom: rem(12);
-            }
-    
-            .menu-item-description {
-              color: var(--colour-surface-variant);
-            }
-
-            .menu-item-button {
-              @include button;
+            .menu-item-text-container {
+              .menu-item-title {
+                color: var(--colour-primary);
+                margin-bottom: rem(12);
+              }
+      
+              .menu-item-description {
+                color: var(--colour-surface-variant);
+              }
+  
+              .menu-item-button {
+                @include button;
+              }
             }
           }
         }

@@ -35,7 +35,7 @@ const Menu = () => {
           <div className="row">
             {
               menuItems.map((item, index) => (
-                <div className="menu-item col-6" key={index}>
+                <div className="menu-item col-12 col-md-6" key={index}>
                   <Link
                     to={item.link}
                     className="menu-link"
@@ -44,9 +44,11 @@ const Menu = () => {
                       <div className="menu-icon-container">
                         <div className={`menu-icon ${item.icon}`}></div>
                       </div>
-                      <h2 className="menu-item-title tile-label">{item.title}</h2>
-                      <p className="menu-item-description body">{item.description}</p>
-                      <button className="menu-item-button">{item.buttonLabel}</button>
+                      <div className="menu-item-text-container">
+                        <h2 className="menu-item-title tile-label">{item.title}</h2>
+                        <p className="menu-item-description body">{item.description}</p>
+                        <button className="menu-item-button">{item.buttonLabel}</button>
+                      </div>
                     </div>
                   </Link>
                 </div>

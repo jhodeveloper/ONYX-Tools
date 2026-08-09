@@ -11,6 +11,10 @@ export default defineConfig({
           @use "/src/styles/variables" as *;
           @use "/src/styles/functions" as *;
           @use "/src/styles/mixins" as *;
+          @use '/src/styles/typography' as *;
+          @import "/node_modules/bootstrap/scss/functions";
+          @import "/node_modules/bootstrap/scss/variables";
+          @import "/node_modules/bootstrap/scss/mixins";
         `
       }
     }

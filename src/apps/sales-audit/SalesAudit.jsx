@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 import DragAndDropFile from "../../components/fields/DragAndDropFile";
 import "./_sales-audit.scss";
+import { Link } from 'react-router';
 
 const SalesAudit = () => {
   const [monerisAmericanExpress, setMonerisAmericanExpress] = useState(-1);
@@ -127,6 +128,14 @@ const SalesAudit = () => {
       <section className="heading-container">
         <div className='container'>
           <div className='row'>
+            <Link
+              to={'/'}
+              className='home-link body'
+            >
+              Back to Menu
+            </Link>
+          </div>
+          <div className='row'>
             <h1 className='heading'>BFPL Sales Audit Tool</h1>
             <p className='body'>Used for daily comparision between Moneris and Booker files.</p>
             <p className='body'>Upload two CSV files to identify discrepancies instantly.</p>
@@ -136,7 +145,7 @@ const SalesAudit = () => {
       <section className='content-container'>
         <div className='container'>
           <div className='input-area row'>
-            <div className='input-field moneris col-6'>
+            <div className='input-field moneris col-12 col-md-6'>
               <DragAndDropFile
                 title='Moneris CSV'
                 description={'Drag & drop a CSV here, or click to select'}
@@ -144,7 +153,7 @@ const SalesAudit = () => {
                 onFileProcessed={handleMonerisProcessed} 
                 allowedFileTypes={['.csv']} />
             </div>
-            <div className='input-field booker col-6'>
+            <div className='input-field booker col-12 col-md-6'>
               <DragAndDropFile
                 title='Booker CSV'
                 description={'Drag & drop a CSV here, or click to select'}
