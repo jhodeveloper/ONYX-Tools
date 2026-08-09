@@ -1,5 +1,6 @@
 import { useState } from 'react';
 
+import HeadingSection from '../../components/HeadingSection';
 import DragAndDropFile from "../../components/fields/DragAndDropFile";
 import "./_sales-audit.scss";
 import { Link } from 'react-router';
@@ -125,7 +126,7 @@ const SalesAudit = () => {
 
   return (
     <main className="main-container sales-audit">
-      <section className="heading-container">
+      {/* <section className="heading-container">
         <div className='container'>
           <div className='row'>
             <Link
@@ -141,7 +142,13 @@ const SalesAudit = () => {
             <p className='body'>Upload two CSV files to identify discrepancies instantly.</p>
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <HeadingSection
+        heading='BFPL Sales Audit Tool'
+        body={['Used for daily comparision between Moneris and Booker files.', 'Upload two CSV files to identify discrepancies instantly.']}
+        includeBack={true}
+      />
       <section className='content-container'>
         <div className='container'>
           <div className='input-area row'>

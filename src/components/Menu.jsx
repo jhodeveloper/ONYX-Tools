@@ -1,4 +1,5 @@
 import { Link } from "react-router";
+import HeadingSection from "./HeadingSection";
 
 import "./_menu.scss";
 
@@ -22,14 +23,15 @@ const Menu = () => {
 
   return (
     <main className="main-container menu">
-      <section className="heading-container">
+      {/* <section className="heading-container">
         <div className="menu-header container">
           <div className="row">
             <h1 className="heading">ONYX Tools Menu</h1>
             <p className="body">Select a utility below to begin</p>
           </div>
         </div>
-      </section>
+      </section> */}
+      <HeadingSection heading="ONYX Tools Menu" body="Select a utility below to begin" />
       <section className="content-container">
         <div className="menu-items container">
           <div className="row">
