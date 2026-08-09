@@ -1,8 +1,17 @@
 :root {
+  --colour-primary: #1b1616;
   --colour-white: #ffffff;
   --colour-stone: #ebe8de;
+  --colour-stone-variant: #c5c8bd;
+  --colour-stone-hover: #e1ddcc;
+  --colour-surface: rgb(252, 249, 239);
+  --colour-surface-variant: #4d4545;
   --colour-warmBeige: #c7b8a1;
   --colour-sage: #caccc1;
   --colour-charcoal: #302a2a;
   --colour-black: #000000;
 }
+
+$icon-csv-compare: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M4 8h16m-4-4 4 4-4 4M20 16H4m4 4-4-4 4-4"/></svg>');
+
+$icon-csv-sum: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24"><path d="M16 6H8l4 6-4 6h8"/></svg>');

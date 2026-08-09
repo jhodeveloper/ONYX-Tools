@@ -1,4 +1,25 @@
-@mixin tile {
-  background-color: var(--colour-charcoal);
+@mixin tile ($isButton: true){
+  background-color: var(--colour-stone);
+  padding: 32px;
+  border-radius: 48px;
+  transition: background-color 0.5s;
+
+  @if ($isButton) {
+    &:hover {
+      background-color: var(--colour-stone-hover);
+    }
+  }
+}
+
+@mixin button {
+  font-family: 'Arimo', sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--colour-stone);
+  padding: 8px 24px;
+  background: none;
+  background-color: var(--colour-primary);
+  border: none;
   border-radius: 20px;
+  outline: none;
 }

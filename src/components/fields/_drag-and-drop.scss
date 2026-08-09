@@ -1,0 +1,15 @@
+.uploader-container {
+  .drop-zone {
+    button {
+      @include button;
+    }
+  }
+
+  .parsed-data {
+    h4 {
+      span {
+        font-weight: 800;
+      }
+    }
+  }
+}

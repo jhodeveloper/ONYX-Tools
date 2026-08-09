@@ -1,45 +1,74 @@
-@use '../../styles/functions';
-@use '../../styles/mixins';
+.sales-audit {
+  .heading-container {
+    .body {
+      margin-bottom: rem(8);
+    }
+  }
 
-.sales-audit-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: functions.rem(20);
-  padding: functions.rem(20);
-  background-color: var(--colour-dark);
-  color: var(--colour-light);
-
-  .input-area {
-    display: flex;
-    gap: 10px;
-  
-    .input-field {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 50%;
-      aspect-ratio: 2 / 1;
-      padding: functions.rem(20);
-
-      .uploader-container {
+  .content-container {
+    .input-area {
+      margin-bottom: rem(20);
+      .input-field {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        flex-grow: 1;
-        
-        @include mixins.tile;
-
-        .drop-zone {
+        width: 50%;
+        aspect-ratio: 2 / 1;
+  
+        .uploader-container {
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: center;
+          flex-grow: 1;
           width: 100%;
-          height: 100%;
-          padding: functions.rem(20);
-          cursor: pointer;
+          
+          @include tile;
+  
+          .drop-zone {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 100%;
+            padding: rem(20);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .results-area {
+      .results-wrapper {
+        .results-container {
+          @include tile (false);
+
+          .heading {
+
+          }
+
+          .results-table {
+            .results-row {
+              padding: rem(5) 0;
+              
+              &:nth-child(odd) {
+                background-color: var(--colour-stone-variant);
+                border-radius: rem(10);
+              }
+              h3 {
+                font-family: 'Arimo', sans-serif;
+                font-size: rem(24);
+                font-weight: 700;
+              }
+
+              span {
+                font-family: 'Jost', sans-serif;
+                font-size: rem(18);
+                font-weight: 400;
+              }
+            }
+          }
         }
       }
     }

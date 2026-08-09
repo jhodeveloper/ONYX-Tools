@@ -1,1 +1,14 @@
-@use './variables';
+@use './typography';
+
+body {
+  background-color: var(--colour-surface);
+}
+
+.main-container {
+  padding: rem(80) 0;
+
+  .heading-container {
+    text-align: center;
+    margin-bottom: rem(80);
+  }
+}

@@ -1,7 +1,15 @@
 import { useState, useRef } from 'react';
 import Papa from 'papaparse';
 
-export default function DragAndDropFile( { onFileProcessed, allowedFileTypes } ) {
+import './_drag-and-drop.scss';
+
+export default function DragAndDropFile({
+  title,
+  description,
+  buttonLabel,
+  onFileProcessed,
+  allowedFileTypes
+} ) {
   const [isDragging, setIsDragging] = useState(false);
   const [file, setFile] = useState(null);
   const [parsedData, setParsedData] = useState([]); // Store the JSON array
@@ -70,7 +78,18 @@ export default function DragAndDropFile( { onFileProcessed, allowedFileTypes } )
         onDrop={handleDrop}
         onClick={() => fileInputRef.current.click()}
       >
-        <p>Drag & drop a CSV here, or click to select</p>
+        {
+          title &&
+          <h3 className='tile-label'>{title}</h3>
+        }
+        { 
+          description && 
+          <p className='body'>{description}</p>
+        }
+        {
+          buttonLabel &&
+          <button>{buttonLabel}</button>
+        }
         <input 
           type="file" 
           accept={ allowedFileTypes ? allowedFileTypes.join(',') : '' }
@@ -89,8 +108,8 @@ export default function DragAndDropFile( { onFileProcessed, allowedFileTypes } )
       {/* Show a quick preview of the parsed JSON data */}
       {parsedData.length > 0 && (
         <div className="parsed-data">
-          <h4>Filename: {file?.name}</h4>
-          <p>Successfully loaded {parsedData.length} rows.</p>
+          <h4 className='label'><span>Filename:</span> {file?.name}</h4>
+          <p className='body'>Successfully loaded {parsedData.length} rows.</p>
         </div>
       )}
     </div>

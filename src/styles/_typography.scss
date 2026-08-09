@@ -1,0 +1,31 @@
+@use './functions';
+
+.heading {
+  font-family: 'Arimo', sans-serif;
+  font-size: functions.rem(48);
+  font-weight: 700;
+}
+
+.subheading {
+  font-family: 'Arimo', sans-serif;
+  font-size: functions.rem(24);
+  font-weight: 700;
+}
+
+.body {
+  font-family: 'Jost', sans-serif;
+  font-size: functions.rem(18);
+  font-weight: 400;
+}
+
+.tile-label {
+  font-family: 'Arimo', sans-serif;
+  font-size: functions.rem(32);
+  font-weight: 700;
+}
+
+.label {
+  font-family: 'Arimo', sans-serif;
+  font-size: functions.rem(20);
+  font-weight: 500;
+}

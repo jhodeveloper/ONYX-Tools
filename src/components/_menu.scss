@@ -1,0 +1,68 @@
+.menu {
+  .heading-container {
+    .heading {
+      color: var(--colour-primary);
+      margin-bottom: rem(16);
+    }
+
+    .body {
+      color: var(--colour-surface-variant);
+    }
+  }
+
+  .content-container {
+    .menu-items {
+      .menu-item {
+        padding: rem(12);
+        .menu-link {
+          text-decoration: none;
+
+          .menu-item-content {
+            @include tile;
+
+            .menu-icon-container {
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              width: rem(64);
+              aspect-ratio: 1/1;
+              margin-bottom: rem(24);
+              border-radius: 50%;
+              background-color: var(--colour-stone-variant);
+
+              .menu-icon {
+                width: rem(40);
+                aspect-ratio: 1/1;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+    
+                &.bfpl-sales-audit-icon {
+                  background-image: $icon-csv-compare;
+                }
+
+                &.bac-qb-tips-icon {
+                  background-image: $icon-csv-sum;
+                }
+              }
+            }
+
+    
+            .menu-item-title {
+              color: var(--colour-primary);
+              margin-bottom: rem(12);
+            }
+    
+            .menu-item-description {
+              color: var(--colour-surface-variant);
+            }
+
+            .menu-item-button {
+              @include button;
+            }
+          }
+        }
+      }
+    }
+  }
+}
