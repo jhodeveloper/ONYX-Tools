@@ -65,3 +65,26 @@
     font-size: functions.rem(30);
   }
 }
+
+.table-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-family: 'Arimo', sans-serif;
+  font-size: functions.rem(18);
+  font-weight: 700;
+
+  @media screen and (max-width: 768px) {
+    font-size: functions.rem(16);
+  }
+}
+
+.table-value {
+  font-family: 'Jost', sans-serif;
+  font-size: functions.rem(18);
+  font-weight: 400;
+
+  @media screen and (max-width: 768px) {
+    font-size: functions.rem(14);
+  }
+}

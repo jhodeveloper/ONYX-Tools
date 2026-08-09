@@ -28,6 +28,7 @@
         border: solid rem(1) var(--colour-primary);
         border-radius: rem(40);
         .filter-input-area {
+          display: none;
           padding-bottom: rem(20);
 
           .filter-input-container {
@@ -69,11 +70,11 @@
 
         .results-area {
           padding-top: rem(20);
-          border-top: solid rem(1) var(--colour-primary);
+          // border-top: solid rem(1) var(--colour-primary);
 
           .results-container {
             .results-value {
-              margin-bottom: 0;
+              margin-bottom: rem(12);
             }
 
             .body {

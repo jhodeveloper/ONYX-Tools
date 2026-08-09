@@ -15,13 +15,15 @@ const TipsAlloc = () => {
     },
   ];
 
-  const [filterInputValue, setFilterInputValue] = useState('');
+  const [filterInputValue, setFilterInputValue] = useState('Vagaro tip');
   const [csvData, setCsvData] = useState(null);
   const [filteredData, setFilteredData] = useState([]);
   const [filteredSum, setFilteredSum] = useState(0);
 
   const handleProcessed = (data) => {
-    setCsvData(data);
+    calculateSum(data);
+
+    setCsvData(data); // No longer needed
   }
 
   const handleFilterChange = (e) => {
@@ -31,6 +33,16 @@ const TipsAlloc = () => {
   }
 
   const handleFilterSubmit = () => {
+    calculateSum(csvData);
+  }
+
+  const handleShortcutClick = (e) => {
+    const data = e.currentTarget.dataset.value;
+    
+    setFilterInputValue(data);
+  }
+
+  const calculateSum = (data) => {
     // Quickbooks export is setup strangely
     // _1 = Transaction Type
     // _2 = #
@@ -42,7 +54,7 @@ const TipsAlloc = () => {
     // _8 = Balance
 
     // Search and filter the data by the description column
-    const results = csvData.filter( row => String(row['_4']).toLowerCase() === filterInputValue.toLowerCase());
+    const results = data.filter( row => String(row['_4']).toLowerCase() === filterInputValue.toLowerCase());
 
     setFilteredData(results);
 
@@ -57,17 +69,12 @@ const TipsAlloc = () => {
     setFilteredSum(sum.toFixed(2));
   }
 
-  const handleShortcutClick = (e) => {
-    const data = e.currentTarget.dataset.value;
-    
-    setFilterInputValue(data);
-  }
-
   return (
     <main className="main-container tips-alloc">
       <HeadingSection
         heading='BAC QuickBooks Tips Re-Allocation Tool'
         body={['Re-allocate BAC QuickBook tips.', 'Upload a file and specify the rows to quickly calculate totals.']}
+        includeBack={true}
       />
       <section className="content-container">
         <div className="container">
@@ -128,7 +135,7 @@ const TipsAlloc = () => {
                 </div>
                 <div className="results-area">
                   <div className="results-container">
-                    <h2 className="subheading">Calculated Sum</h2>
+                    <h2 className="subheading">Calculated Sum for Vagaro Tips:</h2>
                     <p className='results-value'>${filteredSum}</p>
                     <p className='body'>From <strong>{filteredData.length}</strong> entries</p>
                   </div>
