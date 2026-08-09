@@ -1,0 +1,87 @@
+.tips-alloc {
+  .content-container {
+    .input-area {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      @include media-breakpoint-down(md) {
+        margin-bottom: rem(40);
+      }
+
+      .input-field {
+        height: 100%;
+
+        .uploader-container {
+          @include upload-field;
+          @include tile;
+  
+          height: 100%;
+        }
+      }
+
+    }
+
+    .content-area {
+      .content-area-wrapper {
+        padding: rem(40);
+        border: solid rem(1) var(--colour-primary);
+        border-radius: rem(40);
+        .filter-input-area {
+          padding-bottom: rem(20);
+
+          .filter-input-container {
+            .filter-input-field-container {
+              margin-bottom: rem(20);
+
+              .filter-input-field {
+                padding: rem(12) rem(24);
+                background-color: var(--colour-stone);
+                border: solid rem(1) var(--colour-primary);
+                border-radius: rem(9999);
+                outline: none;
+                margin-right: rem(20);
+                margin-bottom: rem(12);
+              }
+      
+              .filter-submit {
+                @include button;
+              }
+            }
+            
+            .filter-shortcuts-container {
+              .body {
+
+              }
+
+              .filter-shortcuts {
+                display: flex;
+                flex-wrap: wrap;
+                gap: rem(10);
+
+                .filter-shortcut-button {
+                  @include button;
+                }
+              }
+            }
+          }
+        }
+
+        .results-area {
+          padding-top: rem(20);
+          border-top: solid rem(1) var(--colour-primary);
+
+          .results-container {
+            .results-value {
+              margin-bottom: 0;
+            }
+
+            .body {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

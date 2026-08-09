@@ -4,4 +4,8 @@ body {
 
 .main-container {
   padding: rem(80) 0;
+
+  @include media-breakpoint-down(md) {
+    padding: rem(20) 0;
+  }
 }

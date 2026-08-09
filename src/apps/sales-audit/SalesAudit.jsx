@@ -1,9 +1,10 @@
 import { useState } from 'react';
 
+import { formatNumber } from '../../utils/Utils';
+
 import HeadingSection from '../../components/HeadingSection';
 import DragAndDropFile from "../../components/fields/DragAndDropFile";
 import "./_sales-audit.scss";
-import { Link } from 'react-router';
 
 const SalesAudit = () => {
   const [monerisAmericanExpress, setMonerisAmericanExpress] = useState(-1);
@@ -78,16 +79,6 @@ const SalesAudit = () => {
     }
   }
 
-  const formatNumber = (num) => {
-    // 1. Remove all commas (becomes "1481.72")
-    const cleanString = String(num).replace(/[$,]/g, '');
-
-    // 2. Parse and format to 2 decimal places
-    const formattedNumber = Number(parseFloat(cleanString).toFixed(2));
-
-    return formattedNumber;
-  }
-
   const compareResults = (monerisAmount, bookerAmount) => {
     if (monerisAmount === -1 || bookerAmount === -1) {
       return <span className={colSizes[3]}>N/A</span>;
@@ -126,24 +117,6 @@ const SalesAudit = () => {
 
   return (
     <main className="main-container sales-audit">
-      {/* <section className="heading-container">
-        <div className='container'>
-          <div className='row'>
-            <Link
-              to={'/'}
-              className='home-link body'
-            >
-              Back to Menu
-            </Link>
-          </div>
-          <div className='row'>
-            <h1 className='heading'>BFPL Sales Audit Tool</h1>
-            <p className='body'>Used for daily comparision between Moneris and Booker files.</p>
-            <p className='body'>Upload two CSV files to identify discrepancies instantly.</p>
-          </div>
-        </div>
-      </section> */}
-
       <HeadingSection
         heading='BFPL Sales Audit Tool'
         body={['Used for daily comparision between Moneris and Booker files.', 'Upload two CSV files to identify discrepancies instantly.']}

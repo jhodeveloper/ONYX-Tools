@@ -23,14 +23,6 @@ const Menu = () => {
 
   return (
     <main className="main-container menu">
-      {/* <section className="heading-container">
-        <div className="menu-header container">
-          <div className="row">
-            <h1 className="heading">ONYX Tools Menu</h1>
-            <p className="body">Select a utility below to begin</p>
-          </div>
-        </div>
-      </section> */}
       <HeadingSection heading="ONYX Tools Menu" body="Select a utility below to begin" />
       <section className="content-container">
         <div className="menu-items container">

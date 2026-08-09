@@ -4,28 +4,64 @@
   font-family: 'Arimo', sans-serif;
   font-size: functions.rem(48);
   font-weight: 700;
+  text-wrap: balance;
+
+  @media screen and (max-width: 768px) {
+    font-size: functions.rem(30);
+  }
 }
 
 .subheading {
   font-family: 'Arimo', sans-serif;
   font-size: functions.rem(24);
   font-weight: 700;
+  text-wrap: balance;
+
+  @media screen and (max-width: 768px) {
+    font-size: functions.rem(20);
+  }
 }
 
 .body {
   font-family: 'Jost', sans-serif;
   font-size: functions.rem(18);
   font-weight: 400;
+  text-wrap: pretty;
+
+  @media screen and (max-width: 768px) {
+    font-size: functions.rem(14);
+  }
 }
 
 .tile-label {
   font-family: 'Arimo', sans-serif;
   font-size: functions.rem(32);
   font-weight: 700;
+  text-wrap: balance;
+
+  @media screen and (max-width: 768px) {
+    font-size: functions.rem(24);
+  }
 }
 
 .label {
   font-family: 'Arimo', sans-serif;
   font-size: functions.rem(20);
   font-weight: 500;
+  text-wrap: balance;
+
+  @media screen and (max-width: 768px) {
+    font-size: functions.rem(16);
+  }
+}
+
+.results-value {
+  font-family: 'Arimo', sans-serif;
+  font-size: functions.rem(40);
+  font-weight: 800;
+  line-height: 100%;
+
+  @media screen and (max-width: 768px) {
+    font-size: functions.rem(30);
+  }
 }
