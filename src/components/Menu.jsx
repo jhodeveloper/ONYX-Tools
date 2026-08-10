@@ -18,6 +18,13 @@ const Menu = () => {
       link: "/bac-qb-tips",
       icon: "bac-qb-tips-icon",
       buttonLabel: "Launch"
+    },
+    {
+      title: "Commission Reporting",
+      description: "The Commission & Payroll Reporting Tool is a specialized financial utility built to streamline payroll reconciliation for BAC and BFPL operations. Designed to eliminate manual spreadsheet math and reduce human error, this app transforms raw booking data into accurate, compliant, and easy-to-read compensation reports for your staff.",
+      link: "/commission-reporting",
+      icon: "commission-reporting-icon",
+      buttonLabel: "Launch"
     }
   ];
 

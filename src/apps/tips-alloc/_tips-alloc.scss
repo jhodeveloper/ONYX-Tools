@@ -36,11 +36,7 @@
               margin-bottom: rem(20);
 
               .filter-input-field {
-                padding: rem(12) rem(24);
-                background-color: var(--colour-stone);
-                border: solid rem(1) var(--colour-primary);
-                border-radius: rem(9999);
-                outline: none;
+                @include text-field;
                 margin-right: rem(20);
                 margin-bottom: rem(12);
               }

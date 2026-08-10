@@ -43,3 +43,11 @@
   border-radius: 20px;
   outline: none;
 }
+
+@mixin text-field {
+  padding: 12px 24px;
+  background-color: transparent;
+  border: solid 1px var(--colour-primary);
+  border-radius: 9999px;
+  outline: none;
+}

@@ -28,16 +28,18 @@ const HeadingSection = ({heading, body, includeBack = false}) => {
 
             <Link
               to={'/'}
-              className="home-link"
+              className="home-link col-12"
             >
               Back to Menu
             </Link>
           }
-          <h1 className="heading">{heading}</h1>
+          <div className="text-container col-12 col-lg-8">
+            <h1 className="heading">{heading}</h1>
 
-          {
-            parseBody(body)
-          }
+            {
+              parseBody(body)
+            }
+          </div>
         </div>
       </div>
     </section>
