@@ -17,5 +17,16 @@ export default defineConfig([
       globals: globals.browser,
       parserOptions: { ecmaFeatures: { jsx: true } },
     },
+    // Add the rules object here
+    rules: {
+      // Enforces single quotes in standard JS (e.g., const name = 'John')
+      'quotes': ['error', 'single'],
+      'jsx-quotes': ['error', 'prefer-double'],
+
+      // JS Quality
+      'eqeqeq': ['error', 'always'],
+      'no-console': ['warn', { allow: ['warn', 'error'] }],
+      'no-unused-vars': 'warn',
+    },
   },
 ])

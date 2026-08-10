@@ -1,30 +1,30 @@
-import { Link } from "react-router";
-import HeadingSection from "./HeadingSection";
+import { Link } from 'react-router';
+import HeadingSection from './HeadingSection';
 
-import "./_menu.scss";
+import './_menu.scss';
 
 const Menu = () => {
   const menuItems = [
     {
-      title: "BFPL Sales Audit",
-      description: "Upload two CSV files to identify discrepancies instantly.",
-      link: "/bfpl-sales-audit",
-      icon: "bfpl-sales-audit-icon",
-      buttonLabel: "Launch"
+      title: 'BFPL Sales Audit',
+      description: 'Upload two CSV files to identify discrepancies instantly.',
+      link: '/bfpl-sales-audit',
+      icon: 'bfpl-sales-audit-icon',
+      buttonLabel: 'Launch'
     },
     {
-      title: "BAC QuickBooks Tips Re-Allocation",
-      description: "Re-allocate BAC QuickBooks tips",
-      link: "/bac-qb-tips",
-      icon: "bac-qb-tips-icon",
-      buttonLabel: "Launch"
+      title: 'BAC QuickBooks Tips Re-Allocation',
+      description: 'Re-allocate BAC QuickBooks tips',
+      link: '/bac-qb-tips',
+      icon: 'bac-qb-tips-icon',
+      buttonLabel: 'Launch'
     },
     {
-      title: "Commission Reporting",
-      description: "The Commission & Payroll Reporting Tool is a specialized financial utility built to streamline payroll reconciliation for BAC and BFPL operations. Designed to eliminate manual spreadsheet math and reduce human error, this app transforms raw booking data into accurate, compliant, and easy-to-read compensation reports for your staff.",
-      link: "/commission-reporting",
-      icon: "commission-reporting-icon",
-      buttonLabel: "Launch"
+      title: 'Commission Reporting',
+      description: 'The Commission & Payroll Reporting Tool is a specialized financial utility built to streamline payroll reconciliation for BAC and BFPL operations. Designed to eliminate manual spreadsheet math and reduce human error, this app transforms raw booking data into accurate, compliant, and easy-to-read compensation reports for your staff.',
+      link: '/commission-reporting',
+      icon: 'commission-reporting-icon',
+      buttonLabel: 'Launch'
     }
   ];
 

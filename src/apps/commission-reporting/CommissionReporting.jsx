@@ -1,6 +1,14 @@
-import HeadingSection from "../../components/HeadingSection";
+import { useState } from 'react';
+
+import HeadingSection from '../../components/HeadingSection';
+
+import './_commission-reporting.scss';
 
 const CommissionReporting = () => {
+  // 0 = BFPL
+  // 1 = BAC
+
+  const [location, setLocation] = useState(0);
   return (
     <main className="main-container commission-reporting">
       <HeadingSection
@@ -9,7 +17,9 @@ const CommissionReporting = () => {
         includeBack={true}
       />
       <section className="content-container">
-        
+        <div className="container">
+
+        </div>
       </section>
     </main>
   )

@@ -2,8 +2,8 @@ import { useState } from 'react';
 
 import { formatNumber } from '../../utils/Utils';
 
-import DragAndDropFile from "../../components/fields/DragAndDropFile";
-import HeadingSection from "../../components/HeadingSection";
+import DragAndDropFile from '../../components/fields/DragAndDropFile';
+import HeadingSection from '../../components/HeadingSection';
 
 import './_tips-alloc.scss';
 
@@ -72,17 +72,17 @@ const TipsAlloc = () => {
   return (
     <main className="main-container tips-alloc">
       <HeadingSection
-        heading='BAC QuickBooks Tips Re-Allocation Tool'
+        heading="BAC QuickBooks Tips Re-Allocation Tool"
         body={['Re-allocate BAC QuickBook tips.', 'Upload a file and specify the rows to quickly calculate totals.']}
         includeBack={true}
       />
       <section className="content-container">
         <div className="container">
-          <div className='row'>
+          <div className="row">
             <div className="input-area col-12 col-md-6">
               <div className="input-field quickbooks col-12">
                 <DragAndDropFile
-                  title='QuickBooks CSV'
+                  title="QuickBooks CSV"
                   description={'Drag & drop a CSV here, or click to select'}
                   buttonLabel={'Select File'}
                   onFileProcessed={handleProcessed}
@@ -90,8 +90,8 @@ const TipsAlloc = () => {
                 />
               </div>
             </div>
-            <div className='content-area col-12 col-md-6'>
-              <div className='content-area-wrapper'>
+            <div className="content-area col-12 col-md-6">
+              <div className="content-area-wrapper">
                 <div className="filter-input-area">
                   <div className="filter-input-container">
                     <h2 className="subheading">Description to Sum</h2>
@@ -136,8 +136,8 @@ const TipsAlloc = () => {
                 <div className="results-area">
                   <div className="results-container">
                     <h2 className="subheading">Calculated Sum for Vagaro Tips:</h2>
-                    <p className='results-value'>${filteredSum}</p>
-                    <p className='body'>From <strong>{filteredData.length}</strong> entries</p>
+                    <p className="results-value">${filteredSum}</p>
+                    <p className="body">From <strong>{filteredData.length}</strong> entries</p>
                   </div>
                 </div>
               </div>

@@ -9,10 +9,10 @@ const App = () => {
     <>
     <BrowserRouter>
       <Routes>
-        <Route path='/' element={ <Menu /> }/>
-        <Route path='/bfpl-sales-audit' element={ <SalesAudit /> }/>
-        <Route path='/bac-qb-tips' element={ <TipsAlloc /> }/>
-        <Route path='/commission-reporting' element={ <CommissionReporting /> }/>
+        <Route path="/" element={ <Menu /> }/>
+        <Route path="/bfpl-sales-audit" element={ <SalesAudit /> }/>
+        <Route path="/bac-qb-tips" element={ <TipsAlloc /> }/>
+        <Route path="/commission-reporting" element={ <CommissionReporting /> }/>
       </Routes>
     </BrowserRouter>
     </>
