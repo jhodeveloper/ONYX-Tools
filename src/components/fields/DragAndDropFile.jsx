@@ -91,7 +91,7 @@ export default function DragAndDropFile({
           <button>{buttonLabel}</button>
         }
         <input 
-          type="file" 
+          type='file'
           accept={ allowedFileTypes ? allowedFileTypes.join(',') : '' }
           ref={fileInputRef} 
           onChange={handleFileChange} 
