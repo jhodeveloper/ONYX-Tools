@@ -1,0 +1,42 @@
+.commission-reporting {
+  .content-container {
+    .container {
+      .row {
+        margin-bottom: rem(20);
+        .platform-area {
+          .platform-tabs {
+            display: flex;
+            gap: rem(10);
+
+            .tab-button {
+              @include button;
+              width: 100%;
+            }
+          }
+        }
+
+        .file-area {
+          .file-field {
+            .uploader-container {
+              @include upload-field;
+              @include tile;
+            }
+          }
+        }
+
+        .input-area {
+          display: flex;
+          flex-direction: column;
+
+          .label {
+            margin-bottom: rem(10);
+          }
+
+          .hours-input {
+            @include text-field;
+          }
+        }
+      }
+    }
+  }
+}

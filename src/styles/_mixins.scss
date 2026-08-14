@@ -39,9 +39,23 @@
   padding: 8px 24px;
   background: none;
   background-color: var(--colour-primary);
-  border: none;
+  border: solid 1px var(--colour-primary);
   border-radius: 20px;
   outline: none;
+  transition: background-color 0.5s;
+
+  &:hover {
+    background-color: var(--colour-charcoal);
+
+    &.selected {
+      background-color: var(--colour-stone);
+    }
+  }
+
+  &.selected {
+    color: var(--colour-primary);
+    background-color: transparent;
+  }
 }
 
 @mixin text-field {
