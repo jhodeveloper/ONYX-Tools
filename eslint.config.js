@@ -21,7 +21,7 @@ export default defineConfig([
     rules: {
       // Enforces single quotes in standard JS (e.g., const name = 'John')
       'quotes': ['error', 'single'],
-      'jsx-quotes': ['error', 'prefer-double'],
+      'jsx-quotes': ['error', 'prefer-single'],
 
       // JS Quality
       'eqeqeq': ['error', 'always'],

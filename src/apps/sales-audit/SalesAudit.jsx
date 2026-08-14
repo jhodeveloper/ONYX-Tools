@@ -3,8 +3,8 @@ import { useState } from 'react';
 import { formatNumber } from '../../utils/Utils';
 
 import HeadingSection from '../../components/HeadingSection';
-import DragAndDropFile from "../../components/fields/DragAndDropFile";
-import "./_sales-audit.scss";
+import DragAndDropFile from '../../components/fields/DragAndDropFile';
+import './_sales-audit.scss';
 
 const SalesAudit = () => {
   const [monerisAmericanExpress, setMonerisAmericanExpress] = useState(-1);
@@ -26,8 +26,6 @@ const SalesAudit = () => {
   ]
 
   const handleMonerisProcessed = (data, filename) => {
-    console.log("Moneris File Processed:", filename, data);
-    
     const amexData = data.filter(row => row['Card Type'] === 'American Express');
     const visaData = data.filter(row => row['Card Type'] === 'Visa');
     const masterCardData = data.filter(row => row['Card Type'] === 'Mastercard');
@@ -39,7 +37,6 @@ const SalesAudit = () => {
     }
     if (visaData.length > 0) {
       const amount = formatNumber(visaData[0]['Net Amount']);
-      console.log("Visa Amount:", visaData[0]['Net Amount']);
       setMonerisVisa(amount);
     }
     if (masterCardData.length > 0) {
@@ -53,8 +50,6 @@ const SalesAudit = () => {
   }
 
   const handleBookerProcessed = (data, filename) => {
-    console.log("Booker File Processed:", filename, data);
-    
     const marketingData = data.filter(row => row['textbox28'] === 'Marketing');
 
     if (marketingData.length > 0) {
@@ -95,6 +90,19 @@ const SalesAudit = () => {
     }
   }
 
+  const onClearData = () => {
+    window.location.reload();
+    // setMonerisAmericanExpress(-1);
+    // setMonerisVisa(-1);
+    // setMonerisMasterCard(-1);
+    // setMonerisInterac(-1);
+
+    // setBookerAmericanExpress(-1);
+    // setBookerVisa(-1);
+    // setBookerMasterCard(-1);
+    // setBookerInterac(-1);
+  }
+
   const compareErrors = (monerisAmount, bookerAmount) => {
     if (monerisAmount === bookerAmount) {
       return <span className={colSizes[4]}>N/A</span>;
@@ -116,7 +124,7 @@ const SalesAudit = () => {
   }
 
   return (
-    <main className="main-container sales-audit">
+    <main className='main-container sales-audit'>
       <HeadingSection
         heading='BFPL Sales Audit Tool'
         body={['Used for daily comparision between Moneris and Booker files.', 'Upload two CSV files to identify discrepancies instantly.']}
@@ -142,10 +150,18 @@ const SalesAudit = () => {
                 allowedFileTypes={['.csv']} />
             </div>
           </div>
-          <div className="results-area row">
+          <div className='results-area row'>
             <div className='results-wrapper col-12'>
               <div className='results-container'>
-                <h2 className='heading'>Results</h2>
+                <div className='results-heading'>
+                  <h2 className='heading'>Results</h2>
+                  <button
+                    className='results-clear'
+                    onClick={onClearData}
+                  >
+                    Clear Data
+                  </button>
+                </div>
                 <div className='results-table'>
                   <div className='results-row headings row'>
                     <h3 className={colSizes[0]}>Card Type</h3>

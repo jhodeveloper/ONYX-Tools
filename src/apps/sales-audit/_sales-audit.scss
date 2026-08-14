@@ -24,6 +24,17 @@
         .results-container {
           @include tile (false);
 
+          .results-heading {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+
+            .results-clear {
+              @include button;
+            }
+          }
+
           .results-table {
             .results-row {
               padding: rem(5) 0;

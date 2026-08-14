@@ -24,7 +24,7 @@ export default function DragAndDropFile({
     const isCsvExt = selectedFile.name.toLowerCase().endsWith('.csv');
 
     if (!isCsvType && !isCsvExt) {
-      setError("Invalid file type. Please upload a .csv file.");
+      setError('Invalid file type. Please upload a .csv file.');
       return;
     }
 
@@ -70,7 +70,7 @@ export default function DragAndDropFile({
   const handleDragLeave = (e) => { e.preventDefault(); setIsDragging(false); };
 
   return (
-    <div className="uploader-container">
+    <div className='uploader-container'>
       <div 
         className={`drop-zone ${isDragging ? 'dragging' : ''}`}
         onDragOver={handleDragOver}
@@ -107,7 +107,7 @@ export default function DragAndDropFile({
 
       {/* Show a quick preview of the parsed JSON data */}
       {parsedData.length > 0 && (
-        <div className="parsed-data">
+        <div className='parsed-data'>
           <h4 className='label'><span>Filename:</span> {file?.name}</h4>
           <p className='body'>Successfully loaded {parsedData.length} rows.</p>
         </div>
