@@ -3,6 +3,10 @@
     button {
       @include button;
     }
+
+		.body {
+			text-align: center;
+		}
   }
 
   .parsed-data {

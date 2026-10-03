@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 
 import { formatNumber } from '../../utils/Utils';
 
@@ -16,6 +16,9 @@ const SalesAudit = () => {
   const [bookerVisa, setBookerVisa] = useState(-1);
   const [bookerMasterCard, setBookerMasterCard] = useState(-1);
   const [bookerInterac, setBookerInterac] = useState(-1);
+
+  const monerisUploaderRef = useRef(null);
+  const bookerUploaderRef = useRef(null);
 
   const colSizes = [
     'col-2',
@@ -91,16 +94,18 @@ const SalesAudit = () => {
   }
 
   const onClearData = () => {
-    window.location.reload();
-    // setMonerisAmericanExpress(-1);
-    // setMonerisVisa(-1);
-    // setMonerisMasterCard(-1);
-    // setMonerisInterac(-1);
+    setMonerisAmericanExpress(-1);
+    setMonerisVisa(-1);
+    setMonerisMasterCard(-1);
+    setMonerisInterac(-1);
 
-    // setBookerAmericanExpress(-1);
-    // setBookerVisa(-1);
-    // setBookerMasterCard(-1);
-    // setBookerInterac(-1);
+    setBookerAmericanExpress(-1);
+    setBookerVisa(-1);
+    setBookerMasterCard(-1);
+    setBookerInterac(-1);
+
+    monerisUploaderRef.current?.clear();
+    bookerUploaderRef.current?.clear();
   }
 
   const compareErrors = (monerisAmount, bookerAmount) => {
@@ -133,20 +138,22 @@ const SalesAudit = () => {
       <section className='content-container'>
         <div className='container'>
           <div className='input-area row'>
-            <div className='input-field moneris col-12 col-md-6'>
-              <DragAndDropFile
-                title='Moneris CSV'
-                description={'Drag & drop a CSV here, or click to select'}
-                buttonLabel={'Select File'}
-                onFileProcessed={handleMonerisProcessed} 
-                allowedFileTypes={['.csv']} />
-            </div>
             <div className='input-field booker col-12 col-md-6'>
               <DragAndDropFile
+                ref={bookerUploaderRef}
                 title='Booker CSV'
-                description={'Drag & drop a CSV here, or click to select'}
+                description={'Drag & drop a CSV here, or click to select. File will start with: "Daily Deposits_Sales By Payment..."'}
                 buttonLabel={'Select File'}
                 onFileProcessed={handleBookerProcessed} 
+                allowedFileTypes={['.csv']} />
+            </div>
+						<div className='input-field moneris col-12 col-md-6'>
+              <DragAndDropFile
+                ref={monerisUploaderRef}
+                title='Moneris CSV'
+                description={'Drag & drop a CSV here, or click to select. File will start with: "End of the day batch summary..."'}
+                buttonLabel={'Select File'}
+                onFileProcessed={handleMonerisProcessed} 
                 allowedFileTypes={['.csv']} />
             </div>
           </div>

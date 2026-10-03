@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useImperativeHandle } from 'react';
 import Papa from 'papaparse';
 
 import './_drag-and-drop.scss';
@@ -8,13 +8,29 @@ export default function DragAndDropFile({
   description,
   buttonLabel,
   onFileProcessed,
-  allowedFileTypes
+  allowedFileTypes,
+  ref
 } ) {
   const [isDragging, setIsDragging] = useState(false);
   const [file, setFile] = useState(null);
   const [parsedData, setParsedData] = useState([]); // Store the JSON array
   const [error, setError] = useState(null);
   const fileInputRef = useRef(null);
+
+  const clear = () => {
+    setIsDragging(false);
+    setFile(null);
+    setParsedData([]);
+    setError(null);
+
+    // Reset the native input so selecting the same file again still fires onChange
+    if (fileInputRef.current) {
+      fileInputRef.current.value = '';
+    }
+  };
+
+  // Lets a parent call ref.current.clear() to reset this uploader
+  useImperativeHandle(ref, () => ({ clear }));
 
   const processFile = (selectedFile) => {
     setError(null);
