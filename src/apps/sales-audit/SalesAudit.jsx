@@ -109,7 +109,7 @@ const SalesAudit = () => {
   }
 
   const compareErrors = (monerisAmount, bookerAmount) => {
-    if (monerisAmount === bookerAmount) {
+    if (monerisAmount === bookerAmount || (monerisAmount < 0 && bookerAmount < 0)) {
       return <span className={colSizes[4]}>N/A</span>;
     } else {
       if (monerisAmount > bookerAmount) {
